@@ -23,17 +23,31 @@ Output =>
 
 */
 
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
-}
+function MultiByNum1OrNum2(x, y ,z) {
+      
 
+        var newArray=x.map(function(x){
+            if(x%y !==1){
+                return x *y
+            }
+            else {
+                return x * z
+            }
+        })
+        return newArray;
+        }
+        
+
+var arrOfNum1 = [1,5,2]
+MultiByNum1OrNum2(arrOfNum1,2,6)
 /* Q2:
+
 Using Filter
 Create a function called longerAndYounger
 that takes an array of objects and 2 numbers as a parameter
 and return a new array with the object has 
-a name longer than the first parameter
-and in the same time less than the second parameters 
+a name longer than the second paramet
+and in the same time the age less than the third parameter
 
 var arrOfObj1 = [
   { name: "alex" ,age:22},
@@ -56,12 +70,27 @@ Output =>
   { name: "alex" ,age:22},
   { name: "mercer",age:26}
 ]
+
 */
 
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
-}
 
+function longerAndYounger(arr,x,y) {
+
+ var newArray = arr.filter(a=>{
+ if (a.name.length > x &&  a.age < y){
+     return newArray=a;
+ }
+ }); 
+ return newArray; 
+}
+var arrOfObj1 = [
+  { name: "alex" ,age:22},
+  { name: "mercer",age:26},
+  { name: "alice" ,age:33},
+  { name: "zaheer",age:35},
+  { name: "elizabeth",age:45}
+]
+longerAndYounger(arrOfObj1,4,30);
 /* Q3:
 Using Reduce
 Create a function called nameAndAllFoods
@@ -89,8 +118,8 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function nameAndAllFoods(arrOfOb,num) {
+   
 }
 
 
@@ -111,3 +140,10 @@ You need to write the solution in the q4.html
   a. when click on the button with id "no"  => cahnge the color of the div with class "main" to red
   b. when click on the button with id "yes" => cahnge the color of the div with class "main" to green
 */
+$('#no').click(function(){
+ $('.main').css({color:"red"})
+});
+
+$('#yes').click(function(){
+ $('.main').css({color:"green"})
+});
